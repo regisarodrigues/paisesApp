@@ -1,0 +1,70 @@
+<div *ngIf="!pais; else divPais" class="alert alert-info">Loading...</div>
+
+<ng-template #divPais>
+  <div class="row">
+    <div class="col-12">
+      <h3>
+        País: <small>{{ pais.name.common }} </small>
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandeira</h3>
+      <img
+        [src]="pais.flags.svg"
+        [alt]="pais.name.common"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col">
+      <h4>Informação</h4>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>População: </strong>{{ pais.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Código numérico: </strong> {{ pais.ccn3 }}
+        </li>
+        <li class="list-group-item">
+          <strong>Area: </strong> {{ pais.area | number }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h4>Traduções</h4>
+  <div class="row">
+    <div class="col">
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["por"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["spa"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["ara"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["cym"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["deu"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["est"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["fra"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["per"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["jpn"].official }}
+      </span>
+      <span class="badge bg-primary me-2">
+        {{ pais.translations["zho"].official }}
+      </span>
+    </div>
+  </div>
+</ng-template>
